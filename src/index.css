@@ -2,6 +2,15 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --primaryColor: #ffd700;
+  --backgroundColor: #022c43;
+  --fontSecondaryColor: #444;
+
+  --sidebarBackgroundColor: #181818;
+  --sidebarFontColor: #4d4d4e;
+}
+
 body {
   overflow: hidden;
   display: block;

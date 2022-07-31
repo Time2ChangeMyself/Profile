@@ -1,5 +1,5 @@
 .nav-bar {
-  background: #181818;
+  background: var(--sidebarBackgroundColor);
   width: 60px;
   height: 100%;
   position: absolute;
@@ -24,7 +24,7 @@
   width: 100%;
 
   a {
-    color: #4d4d4e;
+    color: var(--sidebarFontColor);
     font-size: 22px;
     position: relative;
 
@@ -94,7 +94,7 @@
   & a {
     font-size: 26px;
     text-align: center;
-    color: #4d4d4e;
+    color: var(--sidebarFontColor);
 
     svg {
       transition: all 0.3s ease-out;
