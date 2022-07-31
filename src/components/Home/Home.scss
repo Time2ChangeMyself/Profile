@@ -37,15 +37,29 @@
       animation: fadeIn 1s 1.7 backwards;
     }
 
-    img {
+    .imgShowing {
       display: inline-block;
       vertical-align: text-bottom;
       width: 100px;
-      opacity: 0;
       height: auto;
+      margin-right: -15px;
+      opacity: 0;
       animation: rotateIn 1.5s linear both;
       animation-delay: 1.4s;
+    }
+
+    .imgDurable {
+      opacity: 1;
+      display: inline-block;
+      vertical-align: text-bottom;
+      width: 100px;
+      height: auto;
       margin-right: -15px;
+      transition: all ease-out 1.5s;
+
+      &:hover {
+        transform: rotateX(180deg);
+      }
     }
   }
 
@@ -62,7 +76,7 @@
 
   .flat-button {
     color: var(--primaryColor);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: 4px;
     font-family: sans-serif;

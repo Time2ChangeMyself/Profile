@@ -5,15 +5,18 @@ import { Link } from 'react-router-dom'
 import AnimatedLetters from './../AnimatedLetters/'
 import { faReact } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Logo from '../Logo/Logo'
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const nameArray = 'enisenko'.split('')
   const jobArray = 'web developer'.split('')
+  const [imgClass, setImgClass] = useState('imgShowing')
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLetterClass('text-animate-hover')
+      setImgClass('imgDurable')
     }, 4000)
 
     return () => {
@@ -30,7 +33,7 @@ const Home = () => {
           <br />
           <span className={`${letterClass} _13`}>I</span>
           <span className={`${letterClass} _14`}>`m</span>
-          <img src={LogoTitle} alt="developer" />
+          <img className={imgClass} src={LogoTitle} alt="developer" />
           <AnimatedLetters
             letterClass={letterClass}
             strArray={nameArray}
@@ -61,6 +64,7 @@ const Home = () => {
           CONTACT ME
         </Link>
       </div>
+      <Logo />
     </div>
   )
 }
