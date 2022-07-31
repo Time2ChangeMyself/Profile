@@ -1,6 +1,6 @@
 .nav-bar {
   background: var(--sidebarBackgroundColor);
-  width: 60px;
+  width: 75px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -10,6 +10,14 @@
   .logo {
     margin-bottom: auto;
     padding: 0 8px;
+    margin-bottom: 15px;
+  }
+
+  .title {
+    font-family: 'Coolvetice';
+    font-weight: 400;
+    color: white;
+    padding: 2px;
   }
 }
 

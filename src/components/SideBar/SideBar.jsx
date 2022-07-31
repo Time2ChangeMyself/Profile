@@ -1,11 +1,10 @@
 import './SideBar.scss'
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import LogoS from './../../assets/images/logo-s.png'
+import LogoS from './../../assets/images/D2.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faHome, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faTelegram } from '@fortawesome/free-brands-svg-icons'
-// import { ReactComponent as D } from './../../../assets/images/D.svg'
 const SideBar = () => {
   return (
     <>
@@ -13,7 +12,7 @@ const SideBar = () => {
         <Link className="logo" to="/">
           <img src={LogoS} alt="logo" />
         </Link>
-        {/* <D /> */}
+        <h2 className="title">Denisenko</h2>
         <nav className="side-nav">
           <NavLink exact="true" activeclassname="active" to="/">
             <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
