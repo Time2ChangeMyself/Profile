@@ -1,0 +1,66 @@
+.logo-wrapper {
+  z-index: -1;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 10%;
+  bottom: 0;
+  right: 10%;
+  margin: auto;
+  left: auto;
+
+  svg {
+    width: 100%;
+    bottom: 100%;
+    left: 0;
+    transform: rotateZ(190deg) !important;
+  }
+
+  .solid-logo {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: rotateZ(190deg) !important;
+    z-index: 1;
+    animation-fill-mode: forwards;
+    animation: drawSolidLogo 5s ease-in;
+    animation-delay: 10s;
+    animation-fill-mode: forwards;
+  }
+
+  .svg-container1 {
+    stroke: var(--primaryColor);
+    stroke-dasharray: 101297.984375;
+    stroke-width: 30px;
+    fill: none;
+    animation: drawSVG1 10s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  .svg-container2 {
+    stroke-dasharray: 101297.984375;
+    fill: none;
+    stroke: var(--secondSVGColor);
+    stroke-width: 30px;
+    animation: drawSVG2 12s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes drawSVG1 {
+  to {
+    stroke-dashoffset: 101297.984375;
+  }
+}
+@keyframes drawSVG2 {
+  to {
+    stroke-dashoffset: 101297.984375;
+  }
+}
+
+@keyframes drawSolidLogo {
+  to {
+    opacity: 1;
+  }
+}
