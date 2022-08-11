@@ -6,9 +6,13 @@ html {
   --primaryColor: #ffd700;
   --backgroundColor: #022c43;
   --fontSecondaryColor: #444;
+  --textColoronPrimary: rgb(226, 35, 35);
 
   --sidebarBackgroundColor: #181818;
   --sidebarFontColor: #4d4d4e;
+  --h1FontColor: #fff;
+  --h2FontColor: #8d8d8d;
+  --textColor: #fff;
 
   --secondSVGColor: #2eacf5;
 }
@@ -56,6 +60,7 @@ button,
 textarea,
 select {
   font: inherit;
+  outline: none;
 }
 
 p,

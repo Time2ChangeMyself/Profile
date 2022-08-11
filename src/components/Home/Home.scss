@@ -8,7 +8,7 @@
   }
 
   h1 {
-    color: #fff;
+    color: var(--h1FontColor);
     font-size: 53px;
     letter-spacing: 0.02em;
     font-family: 'Coolvetice';
@@ -65,7 +65,7 @@
 
   h2 {
     position: relative;
-    color: #8d8d8d;
+    color: var(--h2FontColor);
     margin-top: 20px;
     font-weight: 400;
     font-size: 11px;
@@ -90,9 +90,9 @@
     box-shadow: 0 0 0px 0px var(--primaryColor);
 
     &:hover {
-      box-shadow: 0 0 15px 5px gold;
+      box-shadow: 0 0 15px 5px var(--primaryColor);
       background: var(--primaryColor);
-      color: rgb(226, 35, 35);
+      color: var(--textColoronPrimary);
     }
   }
 }
