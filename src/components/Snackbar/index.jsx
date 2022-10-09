@@ -5,45 +5,47 @@ import { useSnackbarContext } from '../../context/SnackbarContext'
 import './Snackbar.scss'
 
 const Snackbar = () => {
-  const { isSnackbarShown } = useSnackbarContext()
-  console.log(isSnackbarShown)
+  const { snackbar } = useSnackbarContext()
 
   return ReactDOM.createPortal(
-    isSnackbarShown && <SnackbarComponent />,
+    snackbar.isSnackbarShown && <SnackbarComponent />,
     document.body
   )
 }
 
 function SnackbarComponent() {
-  const { showSnackbar, isSnackbarShown, snackbarStatus, setSnackbarStatus } =
-    useSnackbarContext()
+  const { snackbar, setSnackbar } = useSnackbarContext()
 
   useEffect(() => {
-    if (isSnackbarShown) {
+    if (snackbar.isSnackbarShown) {
       const timeoutId = setTimeout(() => {
-        setSnackbarStatus('')
-        showSnackbar(false)
+        setSnackbar({
+          isSnackbarShown: false,
+          snackbarStatus: null,
+        })
       }, 3000)
 
       return () => {
         clearTimeout(timeoutId)
       }
     }
-  }, [setSnackbarStatus, showSnackbar, isSnackbarShown])
+  }, [snackbar])
 
-  const responseMessage = (snackbarStatus) => {
-    switch (snackbarStatus) {
+  const responseMessage = (message) => {
+    switch (message) {
       case 200:
         return 'Your Message was sent!'
       case 400:
         return 'Try later or contact me with other platform'
       default:
-        return 'Not sure what was that...'
+        return message
     }
   }
   return (
     <div className="snackbar">
-      <p className="snackbar-text">{responseMessage(snackbarStatus)}</p>
+      <p className="snackbar-text">
+        {responseMessage(snackbar.snackbarStatus)}
+      </p>
     </div>
   )
 }

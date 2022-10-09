@@ -7,18 +7,22 @@ function useSnackbarContext() {
 }
 
 const SnackbarProvider = ({ children }) => {
-  const [isSnackbarShown, setIsSnackbarShown] = useState(false)
-  const [snackbarStatus, setSnackbarStatus] = useState(null)
+  const [snackbar, setSnackbar] = useState({
+    isSnackbarShown: false,
+    snackbarStatus: null,
+  })
 
-  function showSnackbar(bool) {
-    setIsSnackbarShown(bool)
+  function showSnackbar(message) {
+    setSnackbar({
+      isSnackbarShown: true,
+      snackbarStatus: message,
+    })
   }
 
   const SnackbarContextValue = {
-    isSnackbarShown,
+    snackbar,
     showSnackbar,
-    snackbarStatus,
-    setSnackbarStatus,
+    setSnackbar,
   }
 
   return (

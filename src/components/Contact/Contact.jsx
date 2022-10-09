@@ -13,7 +13,7 @@ const Contact = () => {
 
   const refForm = useRef()
 
-  const { showSnackbar, setSnackbarStatus } = useSnackbarContext()
+  const { showSnackbar } = useSnackbarContext()
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -27,22 +27,26 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const [email, name, subject, message] = refForm.current.elements
+    if (!email.value || !name.value || !subject.value || !message.value) {
+      showSnackbar('Please, fill the form')
+      return
+    }
+
     emailjs
       .sendForm(
-        `${process.env.REACT_APP_SERVICE_I}`,
+        `${process.env.REACT_APP_SERVICE_ID}`,
         `${process.env.REACT_APP_TEMPLATE_ID}`,
         refForm.current,
         `${process.env.REACT_APP_PUBLIC_KEY}`
       )
       .then((res) => {
         console.log(res)
-        setSnackbarStatus(res.status)
-        showSnackbar(true)
+        showSnackbar(res.status)
       })
       .catch((err) => {
         console.log(err)
-        setSnackbarStatus(err.status)
-        showSnackbar(true)
+        showSnackbar(err.status)
       })
   }
   return (

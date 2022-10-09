@@ -1,19 +1,19 @@
 .snackbar {
   width: fit-content;
-  height: 75px;
-  background-color: rgb(157, 248, 104);
-  opacity: 0.9;
+  height: 40px;
+  background-color: rgb(0, 0, 0);
   position: absolute;
-  top: -75px;
+  top: 95%;
   transform: translateX(-50%);
   border-radius: 5px;
-  left: 50%;
-  padding: 15px;
+  left: -150px;
+  padding: 5px 45px;
   animation: snackbarAnim 3s;
   display: flex;
-  margin: auto;
+  min-width: 150px;
 
   .snackbar-text {
+    margin: auto;
     height: fit-content;
     font-size: 18px;
     color: white;
@@ -23,17 +23,17 @@
 
 @keyframes snackbarAnim {
   from {
-    top: -75px;
+    left: -100px;
   }
   25% {
-    top: 100px;
+    left: 100px;
   }
 
   75% {
-    top: 100px;
+    left: 100px;
   }
 
   to {
-    top: -75px;
+    left: -150px;
   }
 }
