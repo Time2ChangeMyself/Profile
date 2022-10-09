@@ -61,6 +61,7 @@ const Contact = () => {
               index={15}
             />
           </h1>
+
           <p>I`ll figure something later on ....</p>
 
           <form
