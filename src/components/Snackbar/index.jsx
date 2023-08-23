@@ -29,7 +29,7 @@ function SnackbarComponent() {
         clearTimeout(timeoutId)
       }
     }
-  }, [snackbar])
+  }, [setSnackbar, snackbar])
 
   const responseMessage = (message) => {
     switch (message) {
